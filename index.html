@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Linker</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            width: 80%;
+            height: 40vh;
+            font-size: 5vw;
+        }
+    </style>
+</head>
+<body>
+    <button id="b">Kadetem go kurde</button>
+
+    <script>
+        function randomString(length, chars) {
+            var result = '';
+            for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+            return result;
+        }
+
+        function openInNewTab(url) {
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+        
+        function getNew() {
+            let rnd = randomString(6, '0123456789abcdefghijklmnopqrstuvwxyz');
+            let url = "https://prnt.sc/" + rnd;
+            openInNewTab(url);
+        }
+
+        document.getElementById("b").addEventListener("click", getNew);
+    </script>
+</body>
+</html>
